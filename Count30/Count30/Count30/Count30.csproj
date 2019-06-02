@@ -8,6 +8,7 @@
     <None Remove="Image\ic_hamburger.png" />
     <None Remove="Image\ic_view_game.png" />
     <None Remove="Image\ic_view_info.png" />
+    <None Remove="Image\ic_view_info_twitter.png" />
     <None Remove="Image\ic_view_setting.png" />
   </ItemGroup>
 
@@ -15,6 +16,7 @@
     <EmbeddedResource Include="Image\ic_hamburger.png" />
     <EmbeddedResource Include="Image\ic_view_game.png" />
     <EmbeddedResource Include="Image\ic_view_info.png" />
+    <EmbeddedResource Include="Image\ic_view_info_twitter.png" />
     <EmbeddedResource Include="Image\ic_view_setting.png" />
   </ItemGroup>
 
