@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Count30.Views.MenuPage"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" >
+    <MasterDetailPage.Master>
+        <NavigationPage Title="メニュー" Icon="ic_hamburger.png">
+            <x:Arguments>
+                <ContentPage Title="Count30">
+
+                    <ListView ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedMenuItem}" 
+                              SeparatorVisibility="Default" SeparatorColor="LightGray" RowHeight="60" BackgroundColor="#2C62D9">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <!-- Main design for our menu items -->
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="20,10,0,10" Spacing="20">
+                                        <Image Source="{Binding Icon}" WidthRequest="35" HeightRequest="35" VerticalOptions="Center" />
+                                        <Label Text="{Binding Title}" FontSize="Medium" VerticalOptions="Center" TextColor="White"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.Behaviors>
+                            <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding NavigateCommand}" />
+                        </ListView.Behaviors>
+                    </ListView>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
