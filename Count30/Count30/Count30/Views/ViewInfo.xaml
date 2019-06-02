@@ -5,7 +5,7 @@
              NavigationPage.HasNavigationBar="False"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <Grid Margin="20" VerticalOptions="StartAndExpand">
+        <Grid Margin="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
