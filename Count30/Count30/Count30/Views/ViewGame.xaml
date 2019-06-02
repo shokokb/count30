@@ -5,10 +5,37 @@
              NavigationPage.HasNavigationBar="False"
              Title="{Binding Title}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Title}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="400">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Image  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Source="{Binding Icon}" 
+                    HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding Turn, Mode=TwoWay}" 
+                    HorizontalTextAlignment="Center" FontSize="Large" VerticalTextAlignment="End"/>
+            <Label  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding CurNum, Mode=TwoWay}" 
+                    HorizontalTextAlignment="Center" FontSize="Large" VerticalTextAlignment="End"/>
+            <Button Grid.Row="3" Grid.Column="0" Text="{Binding LeftNum}"
+                    Command="{Binding LeftCommand}" IsEnabled="{Binding IsEnabledLeft}"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="{Binding CenterNum}"
+                    Command="{Binding CenterCommand}" IsEnabled="{Binding IsEnabledCenter}"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="{Binding RightNum}"
+                    Command="{Binding RightCommand}" IsEnabled="{Binding IsEnabledRight}"/>
+            <Button Grid.Row="4" Grid.Column="0" Text="開始" BackgroundColor="LightYellow" 
+                    Command="{Binding StartCommand}" IsEnabled="{Binding IsEnabledStart}"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="交代" BackgroundColor="LightBlue" 
+                    Command="{Binding SwitchCommand}" IsEnabled="{Binding IsEnabledSwitch}"/>
+            <Button Grid.Row="4" Grid.Column="2" Text="終了" BackgroundColor="Coral" 
+                    Command="{Binding QuitCommand}" IsEnabled="{Binding IsEnabledQuit}"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

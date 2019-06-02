@@ -34,7 +34,10 @@ namespace Count30.ViewModels
             set => SetProperty(ref _twitterUrl, value);
         }
 
-        public ViewInfoViewModel(INavigationService navigationService) : base(navigationService)
+        public ViewInfoViewModel(
+            INavigationService navigationService, 
+            Prism.Services.IPageDialogService dialogService)
+            : base(navigationService, dialogService)
         {
             Title = "情報";
 

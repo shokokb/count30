@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Image\ic_count_30_400.png" />
+    <None Remove="Image\ic_count_30_500.png" />
     <None Remove="Image\ic_hamburger.png" />
     <None Remove="Image\ic_view_game.png" />
     <None Remove="Image\ic_view_info.png" />
@@ -13,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Image\ic_count_30_400.png" />
     <EmbeddedResource Include="Image\ic_hamburger.png" />
     <EmbeddedResource Include="Image\ic_view_game.png" />
     <EmbeddedResource Include="Image\ic_view_info.png" />
@@ -23,6 +26,10 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.2.0.839982" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Image\ic_count_30_500.png" />
   </ItemGroup>
 
   <ItemGroup>

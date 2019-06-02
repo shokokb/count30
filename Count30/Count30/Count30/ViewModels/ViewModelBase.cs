@@ -10,6 +10,7 @@ namespace Count30.ViewModels
     public class ViewModelBase : BindableBase, INavigationAware, IDestructible
     {
         protected INavigationService NavigationService { get; private set; }
+        protected Prism.Services.IPageDialogService DialogService { get; private set; }
 
         private string _title;
         public string Title
@@ -18,9 +19,11 @@ namespace Count30.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public ViewModelBase(INavigationService navigationService)
+        public ViewModelBase(INavigationService navigationService,
+            Prism.Services.IPageDialogService dialogService)
         {
             NavigationService = navigationService;
+            DialogService = dialogService;
         }
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)
