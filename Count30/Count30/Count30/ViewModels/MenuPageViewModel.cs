@@ -15,7 +15,15 @@ namespace Count30.ViewModels
     {
         private INavigationService _navigationService;
 
+        private ImageSource _hamburgerIcon;
+
         public ObservableCollection<MyMenuItem> MenuItems { get; set; }
+
+        public ImageSource  HamburgerIcon
+        {
+            get => _hamburgerIcon;
+            set => SetProperty(ref _hamburgerIcon, value);
+        }
 
         private MyMenuItem selectedMenuItem;
         public MyMenuItem SelectedMenuItem
@@ -29,6 +37,8 @@ namespace Count30.ViewModels
         public MenuPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+
+            HamburgerIcon = ImageSource.FromResource("Count30.Image.ic_hamburger.png");
 
             MenuItems = new ObservableCollection<MyMenuItem>();
 

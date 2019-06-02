@@ -6,7 +6,7 @@
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True" >
     <MasterDetailPage.Master>
-        <NavigationPage Title="メニュー" Icon="ic_hamburger.png">
+        <NavigationPage Title="メニュー" Icon="{Binding HamburgerIcon}">
             <x:Arguments>
                 <ContentPage Title="Count30">
 
