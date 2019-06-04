@@ -8,12 +8,16 @@ using System.Text;
 using Xamarin.Forms;
 using Count30.Models;
 using Count30.Views;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace Count30.ViewModels
 {
     public class MenuPageViewModel : BindableBase
     {
         private INavigationService _navigationService;
+
+        Assembly _assembly = typeof(App).GetTypeInfo().Assembly;
 
         private ImageSource _hamburgerIcon;
 
@@ -38,20 +42,20 @@ namespace Count30.ViewModels
         {
             _navigationService = navigationService;
 
-            HamburgerIcon = ImageSource.FromResource("Count30.Image.ic_hamburger.png");
+            HamburgerIcon = ImageSource.FromResource("Count30.Image.ic_hamburger.png", _assembly);
 
             MenuItems = new ObservableCollection<MyMenuItem>();
 
             MenuItems.Add(new MyMenuItem()
             {
-                Icon = ImageSource.FromResource("Count30.Image.ic_view_game.png"),
+                Icon = ImageSource.FromResource("Count30.Image.ic_view_game.png", _assembly),
                 PageName = nameof(ViewGame),
                 Title = "ゲーム"
             });
 
             MenuItems.Add(new MyMenuItem()
             {
-                Icon = ImageSource.FromResource("Count30.Image.ic_view_info.png"),
+                Icon = ImageSource.FromResource("Count30.Image.ic_view_info.png", _assembly),
                 PageName = nameof(ViewInfo),
                 Title = "情報"
             });

@@ -2,6 +2,7 @@
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -12,6 +13,8 @@ namespace Count30.ViewModels
     {
         const int SEC = 1;
         const int MAX = 30;
+
+        private Assembly _assembly = typeof(App).GetTypeInfo().Assembly;
 
         public enum E_Player
         {
@@ -130,7 +133,7 @@ namespace Count30.ViewModels
         {
             Title = "ゲーム";
 
-            Icon = ImageSource.FromResource("Count30.Image.ic_count_30_400.png");
+            Icon = ImageSource.FromResource("Count30.Image.ic_count_30_400.png", _assembly);
 
             LeftCommand = new DelegateCommand(() =>
             {

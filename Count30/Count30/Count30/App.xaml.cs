@@ -23,7 +23,8 @@ namespace Count30
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync(nameof(MenuPage) + "/" + nameof(NavigationPage) + "/" + nameof(ViewGame));
+            string path = nameof(MenuPage) + "/" + nameof(NavigationPage) + "/" + nameof(ViewGame);
+            await NavigationService.NavigateAsync(path);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
